@@ -8,32 +8,29 @@
 
 import UIKit
 
-class FBTabBarController: UITabBarController {
+public class FBTabBarController: UITabBarController {
     
     // MARK: Properties
-    
+        
     private let indicatorPlatform = UIView()
-    private let vc1 = UIViewController()
-    private let vc2 = UIViewController()
-
+    
     // MARK: Init
-    override func viewDidLoad() {
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
-        vc1.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "doc.text"), tag: 0)
-        vc2.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.2"), tag: 2)
-
-        setViewControllers([vc1, vc2], animated: true)
-        
-        setupIndicatorPlatform()
-
-//        tabBar.barTintColor = .black
-//        tabBar.tintColor = UIColor.gthTabBarControllerTintColor
         tabBar.isTranslucent = false
     }
     
+    open override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        super.setViewControllers(viewControllers, animated: animated)
+        
+        setupIndicatorPlatform()
+    }
+    
     // MARK: UITabBarDelegate
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    
+    public override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         let index = CGFloat(integerLiteral: tabBar.items!.firstIndex(of: item)!)
         let itemWidth = indicatorPlatform.frame.width
         let newCenterX = (itemWidth / 2.0) + (itemWidth * index)
@@ -44,9 +41,10 @@ class FBTabBarController: UITabBarController {
     }
 
     // MARK: Private Functions
+    
     private func setupIndicatorPlatform() {
         let tabBarItemSize = CGSize(width: tabBar.frame.width / CGFloat(tabBar.items!.count), height: tabBar.frame.height)
-        indicatorPlatform.backgroundColor = .black
+        indicatorPlatform.backgroundColor = tabBar.tintColor
         indicatorPlatform.frame = CGRect(x: 0.0, y: 0.0, width: tabBarItemSize.width, height: 2.0)
         indicatorPlatform.center.x = tabBar.frame.width / CGFloat(tabBar.items!.count) / 2.0
         tabBar.addSubview(indicatorPlatform)

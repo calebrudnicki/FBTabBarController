@@ -1,0 +1,6 @@
+framework module Pods_FBTabBarControllerExample {
+  umbrella header "Pods-FBTabBarControllerExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

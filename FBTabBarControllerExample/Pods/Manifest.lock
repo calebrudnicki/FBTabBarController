@@ -1,0 +1,16 @@
+PODS:
+  - FBTabBarController (1.0.0)
+
+DEPENDENCIES:
+  - FBTabBarController (from `../FBTabBarController`)
+
+EXTERNAL SOURCES:
+  FBTabBarController:
+    :path: "../FBTabBarController"
+
+SPEC CHECKSUMS:
+  FBTabBarController: 1003e42a1036c2b4f2505a0e811d2ff9e2361548
+
+PODFILE CHECKSUM: 3bb7ae3097e56260669a8bf2ce1c0528c40726a9
+
+COCOAPODS: 1.9.1

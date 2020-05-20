@@ -9,6 +9,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "Caleb Rudnicki" => "calebrudnicki@gmail.com" }
   spec.platform     = :ios, "13.0"
   spec.source       = { :git => "https://github.com/calebrudnicki/FBTabBarController.git", :tag => "#{spec.version}" }
-  spec.source_files  = "FBTabBarController/**/*"
+  spec.source_files  = "FBTabBarController/**/*.{h,swift}"
+  spec.swift_version   = "5.0"
   
  end

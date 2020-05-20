@@ -2,7 +2,7 @@
 
 `FBTabBarController` is a easy-to-use UITabBarController to make any app's tab's looks like the Facebook iOS app. No need to struggle with custom tab bars to achieve the floating platform indicator. Just use this library to get your project off of the ground quickly!
 
-[Demo](https://i.imgur.com/nv81Onp.mp4)
+<img src="https://media.giphy.com/media/J3MF95LAIjrwQgFHRP/giphy.gif" height="380px">
 
 ## Installation
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		111C25A1D1272994C50ED740023279E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		1CADBABC2E03F391D55CE8B8CA04BAB4 /* FBTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 510346A94B486AE517E2A9BE50DD19A3 /* FBTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31946DD6248AF6750037E645 /* FBTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31946DD5248AF6750037E645 /* FBTabBarItem.swift */; };
 		6497840C072CFB8A8C52E94344776E71 /* Pods-FBTabBarControllerExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C2A2B7093C0C5E9090A578C6ABAF14 /* Pods-FBTabBarControllerExample-dummy.m */; };
 		B5FCFF836B0582FC2E7396ECCB801B45 /* FBTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7FE5C08631FA03E28C98B24904F1105 /* FBTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D26BDBBD54A9824E075A3436DA991D98 /* FBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0E0B7B2A297A90ECC945E1874C1FD /* FBTabBarController.swift */; };
@@ -34,6 +35,7 @@
 		1856D3DAE4F7445110770250A2EF6C9B /* Pods-FBTabBarControllerExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FBTabBarControllerExample.modulemap"; sourceTree = "<group>"; };
 		209BB77DD4AB0A3C0F861523B932B678 /* Pods-FBTabBarControllerExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FBTabBarControllerExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		26B747ABC347B27DD09648D7C26D09E6 /* Pods-FBTabBarControllerExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FBTabBarControllerExample-frameworks.sh"; sourceTree = "<group>"; };
+		31946DD5248AF6750037E645 /* FBTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBTabBarItem.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		510346A94B486AE517E2A9BE50DD19A3 /* FBTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTabBarController.h; path = FBTabBarController/FBTabBarController.h; sourceTree = "<group>"; };
 		616B9622DF741B7396DFAACFB06C03C1 /* FBTabBarController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBTabBarController-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				510346A94B486AE517E2A9BE50DD19A3 /* FBTabBarController.h */,
 				D9B0E0B7B2A297A90ECC945E1874C1FD /* FBTabBarController.swift */,
+				31946DD5248AF6750037E645 /* FBTabBarItem.swift */,
 				22A506AC0AAEBFC2AA3E0C445778ED11 /* Pod */,
 				D29C81162479B9123FDFC38E10B58C82 /* Support Files */,
 			);
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31946DD6248AF6750037E645 /* FBTabBarItem.swift in Sources */,
 				F757168BB33E8B5F58B69460DFBC36A6 /* FBTabBarController-dummy.m in Sources */,
 				D26BDBBD54A9824E075A3436DA991D98 /* FBTabBarController.swift in Sources */,
 			);

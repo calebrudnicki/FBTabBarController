@@ -20,22 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let fbTabBarController = FBTabBarController()
-        fbTabBarController.tabBar.tintColor = .red
         
         let firstViewController = FirstViewController()
-        firstViewController.tabBarItem = UITabBarItem(title: "First",
+        firstViewController.tabBarItem = FBTabBarItem(title: "First",
                                                       image: UIImage(systemName: "1.circle.fill"),
-                                                      tag: 0)
-        
+                                                      tag: 0,
+                                                      tintColor: .systemBlue)
+
         let secondViewController = SecondViewController()
-        secondViewController.tabBarItem = UITabBarItem(title: "Second",
-                                                      image: UIImage(systemName: "2.circle.fill"),
-                                                      tag: 1)
-        
+        secondViewController.tabBarItem = FBTabBarItem(title: "Second",
+                                                       image: UIImage(systemName: "2.circle.fill"),
+                                                       tag: 1,
+                                                       tintColor: .systemTeal)
+
         let thirdViewController = ThirdViewController()
-        thirdViewController.tabBarItem = UITabBarItem(title: "Third",
+        thirdViewController.tabBarItem = FBTabBarItem(title: "Third",
                                                       image: UIImage(systemName: "3.circle.fill"),
-                                                      tag: 2)
+                                                      tag: 2,
+                                                      tintColor: .systemRed)
         
         fbTabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController], animated: true)
         

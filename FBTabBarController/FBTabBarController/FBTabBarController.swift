@@ -22,6 +22,20 @@ public class FBTabBarController: UITabBarController {
         tabBar.isTranslucent = false
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let firstItem = tabBar.items?[0],
+            let firstFBItem = firstItem as? FBTabBarItem,
+            let firstFBItemColor = firstFBItem.tintColor
+            else {
+                return
+        }
+        
+        tabBar.tintColor = firstFBItemColor
+        indicatorPlatform.backgroundColor = firstFBItemColor
+    }
+    
     open override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
         
@@ -36,6 +50,11 @@ public class FBTabBarController: UITabBarController {
         let newCenterX = (itemWidth / 2.0) + (itemWidth * index)
 
         UIView.animate(withDuration: 0.3) {
+            if let fbTabBarItem = item as? FBTabBarItem,
+                let fbTabBarItemColor = fbTabBarItem.tintColor {
+                tabBar.tintColor = fbTabBarItemColor
+            }
+            self.indicatorPlatform.backgroundColor = tabBar.tintColor
             self.indicatorPlatform.center.x = newCenterX
         }
     }

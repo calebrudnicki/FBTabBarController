@@ -2,7 +2,13 @@
 
 `FBTabBarController` is a easy-to-use UITabBarController to make any app's tab's looks like the Facebook iOS app. No need to struggle with custom tab bars to achieve the floating platform indicator. Just use this library to get your project off of the ground quickly!
 
-<img src="https://media.giphy.com/media/J3MF95LAIjrwQgFHRP/giphy.gif" height="380px">
+Facebook iOS app:
+
+<img src="https://media.giphy.com/media/iDBudPIGhwfysYTiuu/giphy.gif">
+
+See the [Georgia Tech Hockey App](https://github.com/calebrudnicki/gthockey-iOS) for use of `FBTabBarController` in the wild:
+
+<img src="https://media.giphy.com/media/kdKmtP9Y8XYJJ63BHs/giphy.gif" height="380px">
 
 ## Installation
 
@@ -29,28 +35,51 @@
 
 ## Development
 
-The setup and use is very similar to how you would work with a normal `UITabBarController`. Here is a simple setup:
+The setup and use is very similar to how you would work with a normal `UITabBarController`. Here is a setup in the simplest form:
 
 ```sh
     let fbTabBarController = FBTabBarController()
     
     let firstViewController = FirstViewController()
-    firstViewController.tabBarItem = UITabBarItem(title: "First",
+    firstViewController.tabBarItem = FBTabBarItem(title: "First",
                                                   image: UIImage(systemName: "1.circle.fill"),
                                                   tag: 0)
        
     let secondViewController = SecondViewController()
-    secondViewController.tabBarItem = UITabBarItem(title: "Second",
+    secondViewController.tabBarItem = FBTabBarItem(title: "Second",
                                                    image: UIImage(systemName: "2.circle.fill"),
                                                    tag: 1)
         
     let thirdViewController = ThirdViewController()
-    thirdViewController.tabBarItem = UITabBarItem(title: "Third",
+    thirdViewController.tabBarItem = FBTabBarItem(title: "Third",
                                                   image: UIImage(systemName: "3.circle.fill"),
                                                   tag: 2)
         
     fbTabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController], animated: true)
 ```
+
+There are two ways to customize the color of your `FBTabBarController`.
+
+#### 1. One color for all tabs by setting the `tintColor` of `fbTabBarController`
+<img src="https://media.giphy.com/media/j2kIrMJCKxIsoVR4yk/giphy.gif">
+
+```sh
+    fbTabBarController.tabBar.tintColor = .systemRed
+```
+
+#### 2. One color for each specific tab by setting the `tintColor` of `FBTabBarItem`
+<img src="https://media.giphy.com/media/htXh82hSZc9A830tkd/giphy.gif">
+
+```sh
+    firstViewController.tabBarItem = FBTabBarItem(title: "First",
+                                                  image: UIImage(systemName: "1.circle.fill"),
+                                                  tag: 0,
+                                                  tintColor: .systemBlue)
+```
+
+Add as many or as little customizations as you want.
+
+---
 
 Requires a minimum version of iOS 13.0.
 

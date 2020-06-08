@@ -94,4 +94,4 @@ MIT
 
 ---
 
-📍Made in PDX
+📍 Made in PDX | 🌲 ☕️ 👟

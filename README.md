@@ -14,48 +14,63 @@ See the [Georgia Tech Hockey App](https://github.com/calebrudnicki/gthockey-iOS)
 
 ### Cocoapod
 
-1. Add a pod entry for JacquardToolkit to your Podfile: 
+1. Add a pod entry to your Podfile: 
 ```sh
     pod 'FBTabBarController'
 ```
-2. Update your Popdfile by running:
+2. Update your Podfile by running:
 ```sh
-    pod update
+    pod install
 ```
 3. Don't forget to include the necessary import statement in your target class:
 ```sh
     import FBTabBarController
 ```
 
-### Locally
+### Manual
 
-1. Create a new file in your desired folder within your project
-
-2. Copy the contents from [FBTabBarController.swift](https://github.com/calebrudnicki/FBTabBarController/blob/master/FBTabBarController/FBTabBarController/FBTabBarController.swift) into your local file.
+1. Copy [FBTabBarController.swift](https://github.com/calebrudnicki/FBTabBarController/blob/master/FBTabBarController/FBTabBarController/FBTabBarController.swift) and [FBTabBarItem.swift](https://github.com/calebrudnicki/FBTabBarController/blob/master/FBTabBarController/FBTabBarController/FBTabBarItem.swift) into your project.
 
 ## Development
 
-The setup and use is very similar to how you would work with a normal `UITabBarController`. Here is a setup in the simplest form:
+### Programmatically
+
+The setup and use is very similar to how you would work with a normal `UITabBarController`. Assuming that you are on an updated version of Xcode and Swift, follow a similar setup in your `SceneDelegate.swift`:
+
+`FirstViewController()`, `SecondViewController()`, and `ThirdViewController()` are not apart of the library, but rather just example view controllers that are used in the example app. Replace these view controllers with ones from your own project.
 
 ```sh
-    let fbTabBarController = FBTabBarController()
-    
-    let firstViewController = FirstViewController()
-    firstViewController.tabBarItem = FBTabBarItem(title: "First",
-                                                  image: UIImage(systemName: "1.circle.fill"),
-                                                  tag: 0)
-       
-    let secondViewController = SecondViewController()
-    secondViewController.tabBarItem = FBTabBarItem(title: "Second",
-                                                   image: UIImage(systemName: "2.circle.fill"),
-                                                   tag: 1)
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
-    let thirdViewController = ThirdViewController()
-    thirdViewController.tabBarItem = FBTabBarItem(title: "Third",
-                                                  image: UIImage(systemName: "3.circle.fill"),
-                                                  tag: 2)
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
         
-    fbTabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController], animated: true)
+        let fbTabBarController = FBTabBarController()
+        
+        let firstViewController = FirstViewController()
+        firstViewController.tabBarItem = FBTabBarItem(title: "First",
+                                                      image: UIImage(systemName: "1.circle.fill"),
+                                                      tag: 0,
+                                                      tintColor: .systemBlue)
+
+        let secondViewController = SecondViewController()
+        secondViewController.tabBarItem = FBTabBarItem(title: "Second",
+                                                       image: UIImage(systemName: "2.circle.fill"),
+                                                       tag: 1,
+                                                       tintColor: .systemTeal)
+
+        let thirdViewController = ThirdViewController()
+        thirdViewController.tabBarItem = FBTabBarItem(title: "Third",
+                                                      image: UIImage(systemName: "3.circle.fill"),
+                                                      tag: 2,
+                                                      tintColor: .systemRed)
+        
+        fbTabBarController.setViewControllers([firstViewController, secondViewController, thirdViewController], animated: true)
+        
+        window?.rootViewController = fbTabBarController
+        window?.makeKeyAndVisible()
+    }
 ```
 
 There are two ways to customize the color of your `FBTabBarController`.
@@ -77,7 +92,7 @@ There are two ways to customize the color of your `FBTabBarController`.
                                                   tintColor: .systemBlue)
 ```
 
-Add as many or as little customizations as you want.
+Since `FBTabBarController` inherits from `UITabBarController`, you can any additional customizations that you would add to a normal `UITabBarController`.
 
 ---
 
